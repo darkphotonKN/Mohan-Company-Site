@@ -1,3 +1,49 @@
+* {
+  margin: 0px;
+  padding: 0px; }
 
+#landing-page {
+  width: 100%;
+  height: 100vh;
+  background-color: #596275; }
+  #landing-page #nav-logo-bar {
+    height: 10vh; }
+  #landing-page #nav-bar {
+    width: 500px;
+    padding-left: 20px;
+    background-color: #596275;
+    font-size: 18px; }
+    #landing-page #nav-bar #nav-title {
+      color: #fff;
+      display: inline-block;
+      margin-right: 22px;
+      font-size: 25px; }
+    #landing-page #nav-bar a {
+      color: #fff;
+      margin-right: 14px;
+      text-decoration: none; }
+    #landing-page #nav-bar a:hover {
+      color: #45aaf2; }
+  #landing-page #main-title-row {
+    margin-top: 32vh; }
+    #landing-page #main-title-row #main-title {
+      color: #fff; }
+    #landing-page #main-title-row #title-description {
+      color: #d1d8e0; }
+
+#contact-page {
+  width: 100%;
+  height: 60vh;
+  background-color: #6A5975; }
+
+#catalog-items {
+  width: 100%;
+  height: 100vh;
+  background-color: #E87A0C; }
+
+#footer-info {
+  width: 100%;
+  height: 20vh;
+  background-color: #596275; }
 
 /*# sourceMappingURL=style.css.map */

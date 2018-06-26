@@ -7,6 +7,7 @@
     <title>Evershine</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/ionicons@4.2.0/dist/ionicons.js"></script>
 </head>
 <body>
 
@@ -14,17 +15,16 @@
     <div id="landing-page">
         <div class="container-fluid">
             <div id="nav-logo-bar" class="row">
-                <div class="col-sm-8"><h1 class="display-4 text-left">LOGO</h1></div>
+                <div class="col-sm-7"><h1 class="display-4 text-left">LOGO</h1></div>
                 <!-- Navigation -->
-                <div class="col-sm-4 text-center">
+                <div class="col-sm-5 text-center">
                     <nav id="nav-bar">
-
-                            <div id="nav-title">MENU</div> 
-                            <a href="#">Home</a>
-                            <a href="#">About Us</a>
-                            <a href="#">Catalog Items</a>
-                            <a href="#">Contact</a>
-
+                        <ion-icon name="list" class="nav-icon"></ion-icon>
+                        <div id="nav-title">MENU</div> 
+                        <a href="#">HOME</a>
+                        <a href="#">ABOUT US</a>
+                        <a href="#">CATALOG ITEMS</a>
+                        <a href="#">CONTACT</a>
                     </nav>
                 </div>
             </div>
@@ -42,17 +42,19 @@
 
     </div>
 
-    <div id="contact-page">
+    <div id="about-page">
+        <h1 id="about-title" class="display-4 text-left">About</h1>
 
     </div>
 
     <div id="catalog-items">
-
+        <h1 id="catalog-title" class="display-4 text-left">Catalog Items</h1>
     </div>
 
     <div id="footer-info">
 
     </div>
     
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

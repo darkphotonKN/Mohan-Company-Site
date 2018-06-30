@@ -63,7 +63,37 @@ function catalogItems() {
         catalog3.classList.add('show');
         catalog4.classList.remove('show');
     });
+
+
+    // individual images opening to full screen viewer 
+    const catalogImageIds = new Array();
+    const noOfImgs = 12; // max no. of images in catalog
+    for(let i=0; i<noOfImgs; i++) { // add access to each img and push to array
+        catalogImageIds.push(document.getElementById(`cat-img-${i+1}`));
+    }
+    // iterate over array to add event listeners
+    catalogImageIds.forEach(img => img.addEventListener('click', () => {
+
+            img.classList.add('active');
+
+            document.querySelector('.cat-img-wrap').classList.add('active');
+
+        }
+    ));
+    
+    console.log(catalogImageIds);
+    
+
+
+
+
+
+
+
 }
+
+
+
 
 
 
@@ -79,3 +109,9 @@ function init() {
 
 // run application 
 init();
+
+onload
+
+onload
+
+onload

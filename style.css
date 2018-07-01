@@ -24,14 +24,20 @@
     width: 500px;
     margin-left: 40px;
     padding-left: 20px;
+    padding-top: 5px;
     background-color: #596275;
-    font-size: 15px;
+    font-size: 16px;
     animation: originalNav 1000ms ease-in-out forwards;
     /* Navigation in Browser View Size */
     /* Navigation in Mobile View Size */ }
     #landing-page #nav-bar span {
+      cursor: pointer;
       text-transform: none;
       display: none; }
+      #landing-page #nav-bar span:hover {
+        transform: scale(1.1); }
+      #landing-page #nav-bar span #nav-title:hover {
+        color: #C1A86C; }
     #landing-page #nav-bar.scroll-nav {
       margin-top: -53px;
       position: fixed;
@@ -72,12 +78,21 @@
   height: 80vh;
   background-color: #93A2C1; }
   #about-page p {
-    font-size: 17px; }
+    font-size: 19px;
+    color: white; }
   #about-page #about-descript {
     margin-top: 50px; }
   #about-page #about-images {
     margin-top: 50px;
     padding: 20px 20px; }
+    #about-page #about-images .icons {
+      height: 230px;
+      width: 230px;
+      margin-bottom: 30px; }
+    #about-page #about-images h2 span {
+      margin-top: 5px;
+      display: block;
+      font-size: 18px; }
     #about-page #about-images img {
       margin-bottom: 20px; }
 
@@ -86,6 +101,10 @@
   width: 100%;
   height: 100vh;
   background-color: #40598C; }
+  #catalog-items #catalog-descript p {
+    font-size: 19px;
+    margin-top: 20px;
+    color: #fff; }
   #catalog-items #catalog-items-1 {
     display: none; }
     #catalog-items #catalog-items-1.active {
@@ -158,17 +177,19 @@
           transition: all 300ms ease-in-out; }
           #catalog-items #catalog-items-4.show .arrow-wrap .catalog-arr-btn4:hover {
             transform: scale(1.1); }
-  #catalog-items #catalog-items-1, #catalog-items #catalog-items-2, #catalog-items #catalog-items-3, #catalog-items #catalog-items-4 {
+  #catalog-items #catalog-items-1 {
+    margin-top: 30px; }
+  #catalog-items #catalog-items-2, #catalog-items #catalog-items-3, #catalog-items #catalog-items-4 {
     margin-top: 100px; }
-    #catalog-items #catalog-items-1 .cat-img-wrap.active, #catalog-items #catalog-items-2 .cat-img-wrap.active, #catalog-items #catalog-items-3 .cat-img-wrap.active, #catalog-items #catalog-items-4 .cat-img-wrap.active {
+    #catalog-items #catalog-items-2 .cat-img-wrap.active, #catalog-items #catalog-items-3 .cat-img-wrap.active, #catalog-items #catalog-items-4 .cat-img-wrap.active {
       position: absolute;
       top: 180vh;
       width: 100%;
       height: 100vh;
       background-color: black; }
-    #catalog-items #catalog-items-1 img:hover, #catalog-items #catalog-items-2 img:hover, #catalog-items #catalog-items-3 img:hover, #catalog-items #catalog-items-4 img:hover {
+    #catalog-items #catalog-items-2 img:hover, #catalog-items #catalog-items-3 img:hover, #catalog-items #catalog-items-4 img:hover {
       cursor: pointer; }
-    #catalog-items #catalog-items-1 img.active, #catalog-items #catalog-items-2 img.active, #catalog-items #catalog-items-3 img.active, #catalog-items #catalog-items-4 img.active {
+    #catalog-items #catalog-items-2 img.active, #catalog-items #catalog-items-3 img.active, #catalog-items #catalog-items-4 img.active {
       position: absolute;
       top: 0;
       height: 50vh;
@@ -183,6 +204,9 @@
   /* Contact Form, Mobile First */ }
   #contact .container-fluid #contact-title {
     margin-bottom: 50px; }
+  #contact .container-fluid h1 span:hover {
+    cursor: pointer;
+    color: #C1A86C; }
   #contact .container-fluid .form-desc {
     font-size: 19px;
     color: #fff; }
@@ -194,6 +218,9 @@
     #contact .container ul {
       list-style: none;
       padding: 0; }
+      #contact .container ul li {
+        margin-top: 5px;
+        margin-bottom: 5px; }
     #contact .container .brand {
       text-align: left;
       color: #fff; }
@@ -230,12 +257,24 @@
             cursor: pointer; }
           #contact .container .wrapper .contact form button:hover, #contact .container .wrapper .contact form button:focus {
             background: #596275;
+            color: #fff;
             transition: background-color 500ms ease-out; }
 
 #footer-info {
   width: 100%;
-  height: 20vh;
+  height: 24vh;
   background-color: #596275; }
+  #footer-info .container-fluid {
+    padding-top: 30px; }
+    #footer-info .container-fluid #info {
+      color: #B29B64; }
+      #footer-info .container-fluid #info a {
+        color: #B29B64;
+        text-decoration: none; }
+      #footer-info .container-fluid #info a:hover {
+        color: #FFECC2; }
+    #footer-info .container-fluid #copyright {
+      margin-top: 30px; }
 
 #about-page, #catalog-items, #contact {
   padding-top: 30px; }
@@ -316,14 +355,32 @@
 
   #catalog-items-1 {
     flex-direction: column; } }
-/* Under 700px show menu button for mobile instead of entire nav */
 @media (max-width: 700px) {
+  /* Under 700px show menu button for mobile instead of entire nav */
+  #main-title {
+    font-size: 45px; }
+
+  #about-title, #catalog-title, #contact-title {
+    font-size: 35px; }
+
   #landing-page #nav-bar {
     width: 180px; }
     #landing-page #nav-bar span {
       display: inline-block; }
     #landing-page #nav-bar .browser-nav {
-      display: none; } }
+      display: none; }
+
+  #about-page #about-descript p {
+    font-size: 18px; }
+  #about-page #about-images {
+    margin-top: 50px; }
+    #about-page #about-images .icons {
+      height: 100px;
+      width: 100px; }
+    #about-page #about-images .desc-text {
+      font-size: 17px; }
+      #about-page #about-images .desc-text span {
+        font-size: 14px; } }
 /* In Non-Mobile Mode Above 700px width */
 @media(min-width: 700px) {
   #contact .container h1.brand {

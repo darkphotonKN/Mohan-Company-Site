@@ -1,10 +1,25 @@
+  // Initialize Firebase
 
+var config = {
+    apiKey: "AIzaSyALYzg69idKyJIjCqbA53szsJ0EaccAvqY",
+    authDomain: "contactform-2e0d9.firebaseapp.com",
+    databaseURL: "https://contactform-2e0d9.firebaseio.com",
+    projectId: "contactform-2e0d9",
+    storageBucket: "contactform-2e0d9.appspot.com",
+    messagingSenderId: "98875352076"
+};
+
+firebase.initializeApp(config);
+
+// Reference messages collection 
+// initialize firebase database, with specific collection 'messages'
+const messagesRef = firebase.database().ref('form-messages'); 
 
 // global variables
-let nav = document.getElementById("nav-bar");
-let navOrigPos = document.getElementById('nav-logo-bar');
+const nav = document.getElementById("nav-bar");
+const navOrigPos = document.getElementById('nav-logo-bar');
 
-let navOffsetThreshold = -41; // position of page where nav should adapt to a fixed nav
+const navOffsetThreshold = -41; // position of page where nav should adapt to a fixed nav
 
 function navAdapt() {
     window.addEventListener('scroll', function(e) {
@@ -26,7 +41,7 @@ function navAdapt() {
 
 
 // catalog items 
-function catalogItems() {
+function loadCatalogItems() {
     const catalog1 = document.getElementById('catalog-items-1');
     const catalog2 = document.getElementById('catalog-items-2');
     const catalog3 = document.getElementById('catalog-items-3');
@@ -82,25 +97,67 @@ function catalogItems() {
     ));
     
     console.log(catalogImageIds);
+
+}
+
+
+/* Contact Page */
+
+function loadContactPage() {
+    // listen for form submit 
+    let form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', submitForm);
+
+}
+
+// submitting form to Firebase 
+function submitForm(e) {
+    e.preventDefault();
     
+    // Get values submitted with form
+    let name = getInputVal('name');
+    let company = getInputVal('company');
+    let email = getInputVal('email');
+    let phone = getInputVal('phone');
+    let message = getInputVal('message');
 
+    // saving form message to Firebase
+    saveMessage(name, company, email, phone, message);
 
+    // testing 
+    console.log(name);
+}
 
+// get form values 
+function getInputVal(id) {
+    return document.getElementById(id).value; 
+}
 
-
-
-
+// function to save form data to Firebase database
+function saveMessage(name, company, email, phone, message) {
+    let newMessageRef = messagesRef.push(); // this is part of firebase api, with .push() 
+    newMessageRef.set({                     // it adds it to a list of data in the database, 
+        name: name,                         // everytime generating a new unique key
+        company: company,
+        email: email,
+        phone: phone, 
+        message: message
+    });
 }
 
 
 
 
 
-
-// initialize all functionality
+// initialize site javascript functionality
 function init() {
+    // load primary page functionalities 
     navAdapt();
-    catalogItems();
+    loadCatalogItems();
+    loadContactPage();  
+
+    // load main landing page 
     let mainTitle = document.getElementById('main-title');
     setTimeout(() => mainTitle.classList.add('main-title'), 500);
     console.log("Site running...");
@@ -110,8 +167,3 @@ function init() {
 // run application 
 init();
 
-onload
-
-onload
-
-onload

@@ -1,5 +1,4 @@
-  // Initialize Firebase
-
+// Initialize Firebase
 var config = {
     apiKey: "AIzaSyALYzg69idKyJIjCqbA53szsJ0EaccAvqY",
     authDomain: "contactform-2e0d9.firebaseapp.com",
@@ -124,6 +123,12 @@ function submitForm(e) {
 
     // saving form message to Firebase
     saveMessage(name, company, email, phone, message);
+
+    // show sent confirmation message
+    const alert = document.querySelector('.alert'); 
+    alert.classList.add('active');
+    // hide confirmation after a few seconds 
+    setTimeout(() => alert.classList.remove('active'), 4000);
 
     // testing 
     console.log(name);

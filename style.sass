@@ -37,7 +37,7 @@ $hover-theme: #C1A86C
         padding-left: 20px
         padding-top: 5px
         background-color: $main-theme
-        font-size: 16px
+        font-size: 18px
         animation: originalNav 1000ms ease-in-out forwards
 
         span 
@@ -103,26 +103,28 @@ $hover-theme: #C1A86C
 
 #about-page 
     width: 100%
-    height: 80vh
-    background-color: #93A2C1
+    height: 85vh
+    background-color: #323742
     
     p 
         font-size: 19px
         color: white
     
     #about-descript
-        margin-top: 50px
+        margin-top: 60px
 
     #about-images
-        margin-top: 50px
+        margin-top: 60px
         padding: 20px 20px
 
         .icons
+            color: #93A2C1
             height: 230px
             width: 230px
             margin-bottom: 30px
         
         h2 
+            color: #fff 
             span 
                 margin-top: 5px
                 display: block
@@ -236,10 +238,10 @@ $hover-theme: #C1A86C
                     &:hover
                         transform: scale(1.1)
 
-    #catalog-items-1
+    #catalog-items-1, #catalog-items-2
         margin-top: 30px
         
-    #catalog-items-2, #catalog-items-3, #catalog-items-4
+    #catalog-items-3, #catalog-items-4
         margin-top: 100px
 
         .cat-img-wrap.active 
@@ -319,6 +321,20 @@ $sec-form-color: #93A2C1
             .contact 
                 background: #f9feff 
 
+                .alert 
+                    text-align: center 
+                    padding: 10px 
+                    background: #79c879
+                    color: #fff 
+                    margin-bottom: 10px 
+                    display: none
+                    
+                     
+
+                    &.active 
+                        animation: alert 500ms ease-in-out forwards
+                        display: block
+
                 form 
                     padding: 1em
                     display: grid
@@ -371,7 +387,7 @@ $sec-form-color: #93A2C1
             margin-top: 30px
 
 #about-page, #catalog-items, #contact
-    padding-top: 30px
+    padding-top: 50px
 
 
 .subheader 
@@ -420,6 +436,7 @@ $sec-form-color: #93A2C1
         transform: scale(0.8)
         background-color: #23282E
 
+// site title 
 @keyframes mainTitle
     0%
         transform: scale(0.7) translateY(35px)
@@ -453,6 +470,14 @@ $sec-form-color: #93A2C1
         opacity: 0
     100%
         transform: translate(0px)
+
+// contact form alert 
+@keyframes alert 
+    0% 
+        opacity: 0
+    100% 
+        opacity: 1
+
 
 
 /* Responsive Design */

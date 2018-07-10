@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 // create route 
 app.get('/', (req, res) => {
-    res.render('contact');
+    res.render('index'); // look for index.handlebars as render output
 });
 
 // takes info from submitted post form
@@ -59,7 +59,7 @@ app.post('/send', (req, res) => {
     let mailOptions = {
         from: '"Fred Foo 👻" <darkphoton@krantinebhwani.com>', // sender address
         to: 'darkphoton@krantinebhwani.com, darkphoton@live.com', // list of receivers
-        subject: 'Hello ✔', // Subject line
+        subject: 'New Message', // Subject line
         text: 'Hello world?', // plain text body
         html: output // output from pre-made 'output' var which took values from form
     };
